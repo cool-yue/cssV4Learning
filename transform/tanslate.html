@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a {
+            width:200px;
+            height:200px;
+            border-bottom:1px solid red;
+            border-top:1px solid green;
+        }
+        .transformA {
+            transform:translateY(100px);
+        }
+        .transformA:hover {
+            transform:rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <!--这里的例子是要说明，当元素整个上边旋转到下面的时候，自身对应的轴也会旋转因此translateY(),这个里面的正值就会向上,负值向下-->
+    <!--这样的行为与上下旋转之前的情况是相反的,因此这说明了每个元素维护自己的那一套坐标,同时虽然元素translate了但是它占的位置还是没有transformed-->
+    <!--之前的样子,同时当hover同一个transform函数的时候,这种状态的迁移可以叠加,而如果不同的transform函数的时候,这种状态是不能叠加的-->
+    <!--权威指南里面说了hover的状态是可以additive,然而经过实验,发现并不能叠加,transform的效果还是被覆盖了-->
+    <div class="a transformA"></div>
+</body>
+</html>
