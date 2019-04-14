@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .aaa {
+        width:100px;
+        height:100px;
+        border:1px solid red;
+        animation-name:change_bgcolor,bg-shift;
+        animation-duration: 10s;
+    }
+    @keyframes bg-shift {
+        35% {background-color: orange;}
+        55% {background-color: red;}
+        65% {background-color: purple;}
+    }
+    @keyframes change_bgcolor {
+        0%,100% {
+            background-color: yellow;
+        }
+        45% {
+            background-color: green;
+        }
+        55% {
+            background-color: blue;
+        }
+    }
+</style>
+<body>
+    <!--对于应用多个动画帧的时候,chrome(edge)和firefox还略微有点不同-->
+    <!--chrome的初始状态是透明色，结束也是透明色-->
+    <!--firefox的初始状态是黄色，结束时透明色-->
+    <!--在应用的2个动画的时候，对于firefox，在0%的时候，如果最后一个动画帧没有设置0%会用前面动画定义的帧数，但是最终会又不会以100%的黄色收尾-->
+    <!--chrome是在0%和100%都会是客户端生成的，都是透明色的-->
+    <!--edge的表现和chrome相似-->
+    <div class="aaa"></div>
+</body>
+</html>

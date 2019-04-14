@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.aaa {
+    transform:scaleY(-1);
+    opacity:0.5;
+    transform-style: preserve-3d;
+    width:300px;
+    transition:all 3s;
+}
+.bbb {
+    transform:scaleY(1);
+    width:300px;
+    transition:all 3s;
+}
+
+.aaa:hover {
+    
+}
+
+.bbb:hover {
+    transform:rotateX(180deg)
+}
+
+
+</style>
+<body>
+    <!--这里这个案例主要是说明scale(-1)可以将元素倒过来-->
+    <img src="./timg.jfif"  class="bbb"/>
+    <img src="./timg.jfif" class="aaa" />
+</body>
+</html>

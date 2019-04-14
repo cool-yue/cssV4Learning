@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .shared {
+        width:100px;
+        height:100px;
+        border:1px solid black;
+        animation-name: change_bg;
+        animation-duration: 2s;
+        animation-iteration-count: 2;
+    }
+    .direction1 {
+        animation-direction: normal;
+    }
+    .direction2 {
+        animation-direction: reverse;
+    }
+    .direction3 {
+        animation-direction: alternate;
+    }
+    .direction4 {
+        animation-direction: alternate-reverse;
+    }
+    @keyframes change_bg {
+        from {
+            background-color: red;
+        }
+        to {
+            background-color: yellow;
+        }
+    }
+</style>
+<body>
+    <!--注意动画的效果的百分之0和百分之100,最终并不会停留在元素的最终状态上,在动画播放完之后,元素会恢复到没有动画的状态-->
+    <!--红-黄,红-黄-->
+    <div class="shared direction1">normal</div>
+    <!--黄-红,黄-红-->
+    <div class="shared direction2">reverse</div>
+    <!--红-黄,黄-红-->
+    <div class="shared direction3">alternate</div>
+    <!--黄-红,红-黄-->
+    <div class="shared direction4">alternate-reverse</div>
+</body>
+</html>
