@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .aaa {
+        width:100px;
+        height:100px;
+        border:1px solid blue;
+        animation:ccc 10s 5s;
+    }
+
+    .bbb {
+        animation-fill-mode:forwards;
+    }
+    .bbb1 {
+        animation-fill-mode:backwards;
+    }
+    .bbb2 {
+        animation-fill-mode:both;
+    }
+
+    @keyframes ccc {
+        from {
+            background-color: yellow;
+        }
+        10% {
+            background-color: purple;
+        }
+        80% {
+            background-color: khaki;
+        }
+        to {
+            background-color:greenyellow;
+        }
+    }
+</style>
+<body>
+    <!--比较3个属性的值的意义-->
+    <!--forwards表示在动画结束的时候,将元素的最终状态定格在最后一帧,Let the <div> element retain the style values from the last keyframe when the animation end -->
+    <!--backwards表示在动画开始前，就将元素的状态变成动画的第一帧,但是最终的状态还是会回到没有动画的时候的状态(相对forwards而言,它不会应用动画样式)
+        Let the <div> element get the style values set by the first keyframe before the animation starts (during the animation-delay period):-->
+    <!--
+        both表示,在动画还没开始的时候就先应用第一帧,然后再动画结束的时候保留动画最后一帧的样式给元素
+        Let the <div> element get the style values set by the first keyframe before the animation starts, and retain the style values from the last keyframe when the animation ends
+    -->
+    <div class="aaa bbb1"></div>
+    <div>延时5秒,动画10秒</div>
+    <div id="time"></div>
+    <script>
+        let secondBox = document.querySelector("#time");
+        let i = 0;
+        let t = setInterval(function() {
+            secondBox.textContent = (++i) + "";
+            if (i===15) {
+                clearInterval(t);
+            }
+        },1000)
+    </script>
+</body>
+</html>
