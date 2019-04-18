@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin:0;
+        padding:0;
+    }
+    .clear-fix::before, .clear-fix::before {
+
+    }
+    html,body {
+       height:100%;
+    }
+    .container {
+       height:100%;
+    }
+    .container .header {
+       height:100px;
+       background-color: aquamarine;
+    }
+    .container .footer {
+       height:100px;
+       background-color:blanchedalmond;
+    }
+    .container .content {
+       height:calc(100% - 200px);
+    }
+    .container .content .left{
+        height:100%;
+        width:15%;
+        float:left;
+        background-color: blue;
+    }
+    .container .content .middle{
+        box-sizing: border-box;
+        height:100%;
+        margin-right:15%;
+        margin-left:15%;
+        background-color: azure;
+    }
+    .container .content .right{
+        height:100%;
+        width:15%;
+        float:right;
+        background-color:cadetblue;
+    }
+</style>
+<body>
+    <!--圣杯布局-->
+    <div class="container">
+        <div class="header"></div>
+        <div class="content">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="middle"></div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>
