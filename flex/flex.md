@@ -56,5 +56,29 @@ cross axis：交叉轴，该轴的方向就是新行被放置的方向。
 cross size：交叉轴方向的总长度
 cross start：行的起始放置位置
 cross end：cross start的对缅
+
+对于从左向右的语言，默认情况下，flex-item的顺序是从左到右，从上到下（设置了换行），也就是main start到main end，cross start到cross end，那么可以知道优先摆放item的位置是main start和cross start，因此有可能空出来的位置就是main end和cross end。好，这一部分空的地方，能不能控制呢，答案是，可以。
 </pre>
+## Flex Container ##
+当flex items没有填满flex container，flex items就会以分组的形式沿着主轴对着main start放置。Flex items也能够对着main end开始放置，放置在中间，最后甚至均匀的放置。
+
+flex layout说明文档为我们提供了flex container属性来控制container空间内容的分布方式，除了`display`和`flex-flow`，还有`justify-content`,`align-content`,`align-items`。
+
+`justify-content`属性控制flex items在一个flex line的范围中，如何沿着main axis来布置items
+
+`align-content`属性定义了flex lines在一个flex container的范围中，如何在cross axis上面布置lines。
+
+`align-items`属性定义了flex items在每个flex line中沿着cross axis如何布置items
+
+## justify Content ##
+`justify-content`属性能够让我们指引`flex items`如何在每一个`flex-line`中，沿着`flex-container`中的`main axis`如何来布置`flex items`。这个属性是应用于`flex container`，不是独立的`flex items`。
+
+`justify-content`的值定义了周围的空间如何分布，或者在某些盒子中间，也就是`flex items`在一个`flex container`,它有6个值，`flex-start`,`flex-end`,`center`,`space-between`,`space-around`,`space-evenly`,初始化的值也就是默认值是`flex-start`。
+
+
+
+## align Content ##
+## align items ##
+
+
 ## flex-item ##
