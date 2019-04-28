@@ -74,10 +74,18 @@ flex layout说明文档为我们提供了flex container属性来控制container�
 `justify-content`属性能够让我们指引`flex items`如何在每一个`flex-line`中，沿着`flex-container`中的`main axis`如何来布置`flex items`。这个属性是应用于`flex container`，不是独立的`flex items`。
 
 `justify-content`的值定义了周围的空间如何分布，或者在某些盒子中间，也就是`flex items`在一个`flex container`,它有6个值，`flex-start`,`flex-end`,`center`,`space-between`,`space-around`,`space-evenly`,初始化的值也就是默认值是`flex-start`。
+### flex-start ###
+
+### flex-end ###
+### center ###
+### space-between ###
+### space-around ###
+### space-evenly ###
 
 
 
 ## align Content ##
+
 ## align items ##
 
 
