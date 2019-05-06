@@ -71,7 +71,7 @@ flex layout说明文档为我们提供了flex container属性来控制container�
 `align-items`属性定义了flex items在每个flex line中沿着cross axis如何布置items
 
 ## justify Content ##
-`justify-content`属性能够让我们指引`flex items`如何在每一个`flex-line`中，沿着`flex-container`中的`main axis`如何来布置`flex items`。这个属性是应用于`flex container`，不是独立的`flex items`。
+`justify-content`属性能够让我们指引`flex items`如何在每一个`flex-line`中，沿着`flex-container`中的`main axis`如何来布置`flex items`。这个属性是应用于`flex container`，不应用在`flex items`。
 
 `justify-content`的值定义了周围的空间如何分布，或者在某些盒子中间，也就是`flex items`在一个`flex container`,它有6个值，`flex-start`,`flex-end`,`center`,`space-between`,`space-around`,`space-evenly`,初始化的值也就是默认值是`flex-start`。
 ### flex-start ###
@@ -87,6 +87,25 @@ flex layout说明文档为我们提供了flex container属性来控制container�
 ## align Content ##
 
 ## align items ##
+align-items属性定义了`flex items`是如何对齐的，沿着`cross axis`,上面提到的`justify-cotent`和`align-items`都应用于`flex-container`。align-items以下几个值,`flex-start`,`flex-end`,`center`,`baseline`,`stretch`这5个属性，默认值是`stretch`.需要注意的是`align items`它们是用于在一行`flex-line`范围内的对齐。如果是`flex-direction:row`就非常好理解了，如果是`flex-direction:column`,`flex-line`就变成了竖直方向，如果数值方向足够，那么相当于整个容器就只有一行，那么对齐的方式就会在这整个`container`作为`flex-line`的范围进行对齐，如果数值方向空间不够，并且设置了`flex-wrap:wrap`,那么可能`flex-items`就有多行，但是由于`flex-direction:column`,因此这时候`container`里面的就会被平分出多个行(这里是列的形式展现)，在每个行中各自对齐。
+### 铺垫 ###
+注意到`flex-items`在对齐的时候，需要考虑到`margin`,换句话说，`margin`是`flex-items`的一部分，也就是说如果设置了`align-items:center`,假如还有`margin-top:10px`,那么实际上中心点是要往上偏移`5px`的，因为这个时候`flex-items`的中心向上偏移了`5px`，算上了设置的margin，同理对于左右，水方向同样适用。
+### flex-start ###
+### flex-end ###
+### flex-center ###
+### flex-baseline ###
+baseline这个在某种情况下与flex-start表现出来的感觉是一样的，那就是同一行元素，有相同的行高，相同的margin，相同的baseline的位置，这个baseline对齐的方式是，取出在一行的所有的`flex-items`,然后计算出每个item中第一行文本的baseline距离cross-start最远的那个baseline，然后将其他的同一行的flex-items移动到第一行文本的baseline跟最远距离的baseline对齐
+### flex-stretch ###
+## align-self ##
+该属性用在一个`flex-item`来覆盖`align-items`已经定义好的属性值。`align-self`的属性与`align-items`一样，一个用于个体，一个用于`flex-container`来影响整个内部的`flex-item`。`align-self`的值默认是`auto`,这个auto的值就是继承于父元素的`align-items`的值。
+## align-content ##
+`align-content`类似于`justify-content`,它们都是定义如何处理多余的空间，`justifiy`是针`main axis`方向，`align`是针对`cross axis`方向。需要注意的是`align-items`是针对每个`flex-line`的范围内。`align-content`顾名思义，如果只有一个`flex-line`那么就没有所谓的效果了，因此`align-content`需要针对多个`flex-line`的`flex-container`。类似于`justify-content`,它的默认是`strech`,它的所有值如下:
+### flex-start ###
+### flex-end ###
+### center ###
+### space-between ###
+### space-around ###
+### space-evenly ###
+### stretch###
 
-
-## flex-item ##
+## 总结 ##
