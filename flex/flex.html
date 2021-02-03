@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex</title>
+</head>
+<style>
+    .flexContainer {
+        display:flex;
+    }
+    .flex-item1 {
+        flex:1,1,300px;
+        width:200px;
+    }
+
+    nav {
+        flex: 2 1 0;
+        background-color: aquamarine;
+    }
+    article {
+        flex: 1 1 0;
+        background-color:darkgoldenrod;
+    }
+    aside {
+        flex: 1 1 0;
+        background-color:lightgray;
+    }
+</style>
+<body>
+    <div class="flexContainer">
+        <div class="flex-item1"></div>
+        <div class="flex-item2"></div>
+    </div>
+    <div style="display:flex;">
+        <nav>这是导航栏这是一个auto宽度的flexitem</nav>
+        <article>这是artical</article>
+        <aside>这是aside</aside>
+    </div>
+</body>
+</html>
